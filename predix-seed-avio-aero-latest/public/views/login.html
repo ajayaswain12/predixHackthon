@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predix Avio Aero</title>
+    <base href="/">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+   
+    
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+background-color:;
+}
+</style>
+</head>
+
+<body class="app" data-ng-controller="MainCtrl" style="padding-left:100px">
+  <!-- Full Width Image Header with Logo -->
+  <!-- Image backgrounds are set within the full-width-pics.css file. -->
+  <!-- Set your background image for this header on the line below. -->
+  <header class="intro-header"
+    style="background-image: url('images/airplane.jpg')">
+    <div class="container">
+      <div class="col-md-6">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="site-heading pull-left" style="margin-left: -150px">
+            <img src="images/avio.png" style="margin-top: 100px;"></img>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <!-- <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="site-heading pull-right" style="margin-left: -200px">
+            <div class="box">
+              <div class="box-header with-border">
+                <h3 class="box-title" id="monthlyname">User Login</h3>
+              </div>
+              <div class="box-body">
+              
+              </div>
+            </div>
+
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+  </header>
+<!-- <div class="flex flex--center" style="padding-bottom:50px;" >
+   
+    <div class="island" style="padding-bottom:0px;background: url(images/black.jpg);margin-left:724px;margin-top:-65px;margin-right:-10px"><img src="images/Avioaero.png" style="width:200px;margin-left:-700px;margin-top:180px" ></img>
+      
+      <div class="box box--huge" >
+            <div class="u-lap-and-up-m++ u-lap-and-up-p++" style="padding-bottom:0px;margin-top:-230px">
+              <div class="flex flex--left u-mv+" style="padding-bottom:0px; ">
+                <h1 style="padding-left:30px;padding-bottom:0px;color:#ffffff;"><strong>User Login</strong></h1>
+                <h5><small style="color:#059A9F;"><sub><sub></small></h5>
+              
+              </div>
+              <div class="alert alert-error" data-ng-show="loginerror">{{loginerror}}</div>
+                <form method="post" class="u-mh++ u-mb++" data-ng-submit="login()">
+                
+  <div>
+        <input type="text" id="username" class="form-control" placeholder="Username" required autofocus ng-model="user.username"></div><br/>
+       <div> 
+        <input type="password" id="password" class="form-control" placeholder="Password" required ng-model="user.password"></div>
+    <br>
+
+
+                 <!--  <input class="text-input u-mb+" name="username" type="text" placeholder="Username" autocomplete="true" autofocus="autofocus" data-ng-model="user.username" />
+                  <input class="text-input u-mb+" name="password" type="password" placeholder="Password" autocomplete="false" data-ng-model="user.password" /> -->
+              <!-- <div>  <button class="btn btn-lg btn-primary btn-block" type="submit" style="background: #08a5e1;border-color: #08a5e1;margin-left:100px;">Log in</button> </div></form>
+            
+            </div>
+        </div>
+    </div>
+</div> -->
+<div style="background-color:#ffffff">
+  <a href="/sv-charts">Charts</a>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12" style="text-align: justify;">
+           <b>Avio Aero</b> is a <b>GE
+          Aviation</b> business which designs, manufactures and maintains
+          components and systems for civil and military aviation. Today, the
+          company provides its clients with innovative technological
+          solutions to respond quickly to constant changes demanded by the
+          market: Additive manufacturing, rapid prototyping, but also cells
+          dedicated to streamlined manufacturing
+          of transmissions, turbines and combustion chambers. Avio Aero has
+          its head office in Italy and major plants in Rivalta di Torino,
+          Pomigliano d’Arco (Naples) and Brindisi. Avio Aero has production
+          sites also in Poland, with more than 4600 employees worldwide
+          (around 4000 of whom are based in Italy). Continuous and ongoing
+          investment in research and development and an established network
+          of relationships with leading universities and international
+          research centres have allowed Avio Aero to develop technological
+          and manufacturing excellence which is recognised across the globe:
+          an achievement borne out by a range of collaborative partnerships
+          with key operators in the global aviation industry. The challenge
+          for Avio Aero is to access technologies and develop new
+          architectures to reduce energy consumption, make aircraft engines
+          lighter and providing the best performances possible.</div>
+      </div>
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title" id="monthlyname">Who we are</h3>
+            </div>
+            <div class="box-body">
+              <img src="images/mac1.png" style="width: 100%; height: 280px">
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+
+        <div class="col-md-3">
+          <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title" id="monthlyname">Facebook Account</h3>
+            </div>
+            <div class="box-body">
+              <div class="progress-group">
+                <img src="images/AvioAero.png" style="width: 100%">
+              </div>
+              <div style="overflow: auto; height: 220px; width: 100%">
+                <div class="progress-group">
+                  <span class="progress-text">Complete Purchase</span> <span
+                    class="progress-number"><b>310</b>/400</span>
+                  <div class="progress sm">
+                    <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div class="progress-group">
+                  <span class="progress-text">Complete Purchase</span> <span
+                    class="progress-number"><b>310</b>/400</span>
+                  <div class="progress sm">
+                    <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div class="progress-group">
+                  <span class="progress-text">Complete Purchase</span> <span
+                    class="progress-number"><b>310</b>/400</span>
+                  <div class="progress sm">
+                    <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div class="progress-group">
+                  <span class="progress-text">Complete Purchase</span> <span
+                    class="progress-number"><b>310</b>/400</span>
+                  <div class="progress sm">
+                    <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div class="progress-group">
+                  <span class="progress-text">Complete Purchase</span> <span
+                    class="progress-number"><b>310</b>/400</span>
+                  <div class="progress sm">
+                    <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+        <div class="col-md-3">
+          <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title" id="monthlyname">Tweeter</h3>
+            </div>
+            <div class="box-body">
+              <div class="progress-group">
+                <span class="progress-text">Tweets by @AVIO AREO</span> <img
+                  src="images/AvioAero.png" style="width: 100%">
+              </div>
+              <div style="overflow: auto; height: 200px; width: 100%">
+                <!-- /.progress-group -->
+                <div class="progress-group">
+                  <span class="progress-text">Complete Purchase</span> <span
+                    class="progress-number"><b>310</b>/400</span>
+                  <div class="progress sm">
+                    <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div class="progress-group">
+                  <span class="progress-text">Complete Purchase</span> <span
+                    class="progress-number"><b>310</b>/400</span>
+                  <div class="progress sm">
+                    <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div class="progress-group">
+                  <span class="progress-text">Complete Purchase</span> <span
+                    class="progress-number"><b>310</b>/400</span>
+                  <div class="progress sm">
+                    <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div class="progress-group">
+                  <span class="progress-text">Complete Purchase</span> <span
+                    class="progress-number"><b>310</b>/400</span>
+                  <div class="progress sm">
+                    <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div class="progress-group">
+                  <span class="progress-text">Complete Purchase</span> <span
+                    class="progress-number"><b>310</b>/400</span>
+                  <div class="progress sm">
+                    <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+      </div>
+    </div>
+  </section>
+ <!-- Fixed Height Image Aside -->
+  <!-- Image backgrounds are set within the full-width-pics.css file. -->
+  <aside class="image-bg-fixed-height"></aside>
+
+  <!-- Content Section -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12"></div>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
+
+  <!-- Footer -->
+  <footer class="intro-header"
+    style="background-image: url('images/machinary.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12"></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+<script>
+// IE11 workaround: We can't rely on IE's load order for scripts that are loaded outside of require.js (might
+//  be an issue with the web components polyfill), so we wait for the HTMLImportsLoaded event to ensure our
+//  web components' scripts have loaded.
+window.addEventListener('HTMLImportsLoaded', function(e) {
+    var elScript = document.createElement('script');
+    elScript.setAttribute('src', 'bower_components/requirejs/require.js');
+    elScript.setAttribute('data-main', 'scripts/bootstrapper.js');
+    document.getElementsByTagName('body')[0].appendChild(elScript);
+});
+</script>
+
+</html>

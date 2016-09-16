@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PREDIX AVIO AERO</title>
+    <base href="/">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+
+    <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="bower_components/polymer/polymer.html"/>
+
+    <script type='application/javascript' src='https://dev-messages.grc-apps.svc.ice.ge.com/messages.js'></script>
+
+    <link rel="localization" href="locales/manifest.json">
+    <script src="bower_components/l20n/l20n.min.js"></script>
+
+    <!-- import page level css. -->
+    <link rel="import" href="bower_components/px-theme/px-app.html">
+    <!-- import component theme css variables. -->
+    <link rel="import" href="bower_components/px-theme/px-theme.html"/>
+
+    <script type='application/javascript' src='bower_components/px/dist/px.min.js'></script>
+
+    <!-- Just needed for IE -->
+    <script src="bower_components/es6-promise/dist/es6-promise.min.js"></script>
+
+    <link rel="import" href="bower_components/px-card/px-dashboard.html"/>
+    <link rel="import" href="bower_components/px-card/px-deck.html"/>
+    <link rel="import" href="bower_components/px-card/px-card.html"/>
+
+    <link rel="import" href="bower_components/px-context-browser/px-context-browser.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/time-series-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/widget-to-widget-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/hide-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/toggle-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/card-to-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/description-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/fetch-data-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/temperature-card.html"/>
+
+</head>
+
+<body class="app" data-ng-controller="MainCtrl">
+  <header role="banner" class="flex flex--middle">
+    <div class="viewport">
+      
+    </div>
+  </header>
+  <div class="viewport">
+    <div class="layout layout--full layout--flush">
+      <link rel="import" href="bower_components/px-app-nav/px-app-nav.html"/>
+      <px-app-nav class="layout__item" nav-items="{{App.tabs}}" path-prefix="/" path-key="state" style="width:100px"></px-app-nav>
+      <main class="layout__item u-pt-- u-pr-- u-pl--" role="main" style="background-color:#ffffff">
+        <!-- MAIN CONTENT -->
+        <section class="u-1/1" role="region" ui-view>
+          <!-- This is the container where the tabs will render -->
+        </section>
+      </main>
+    </div>
+  </div>
+  <footer class="flex flex--middle" role="contentinfo">
+    
+      
+ 
+      <nav class="flex flex--right flex--middle" role="navigation">
+        <ul class="list-inline">
+          <li class="u-mh-">
+            <a href="http://www.ge.com/privacy" target="_blank">Privacy</a>
+          </li>
+          <li class="u-mh-">
+            <a href="http://www.ge.com/terms" target="_blank">Terms</a>
+          </li>
+        </ul>
+        <small class="u-ml+">©2015 General Electric</small>
+      </nav>
+    </div>
+  </footer>
+</body>
+<script>
+// IE11 workaround: We can't rely on IE's load order for scripts that are loaded outside of require.js (might
+//  be an issue with the web components polyfill), so we wait for the HTMLImportsLoaded event to ensure our
+//  web components' scripts have loaded.
+window.addEventListener('HTMLImportsLoaded', function(e) {
+    var elScript = document.createElement('script');
+    elScript.setAttribute('src', 'bower_components/requirejs/require.js');
+    elScript.setAttribute('data-main', 'scripts/bootstrapper.js');
+    document.getElementsByTagName('body')[0].appendChild(elScript);
+});
+</script>
+
+</html>

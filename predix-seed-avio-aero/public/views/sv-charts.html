@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+   <script src="https://code.angularjs.org/1.3.14/angular.js"></script>
+    <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="bower_components/polymer/polymer.html"/>
+
+    <script type='application/javascript' src='https://dev-messages.grc-apps.svc.ice.ge.com/messages.js'></script>
+
+    <link rel="localization" href="locales/manifest.json">
+    <script src="bower_components/l20n/l20n.min.js"></script>
+
+    <!-- import page level css. -->
+    <link rel="import" href="bower_components/px-theme/px-app.html">
+    <!-- import component theme css variables. -->
+    <link rel="import" href="bower_components/px-theme/px-theme.html"/>
+
+    <script type='application/javascript' src='bower_components/px/dist/px.min.js'></script>
+
+    <!-- Just needed for IE -->
+    <script src="bower_components/es6-promise/dist/es6-promise.min.js"></script>
+
+    <link rel="import" href="bower_components/px-card/px-dashboard.html"/>
+    <link rel="import" href="bower_components/px-card/px-deck.html"/>
+    <link rel="import" href="bower_components/px-card/px-card.html"/>
+
+    <link rel="import" href="bower_components/px-context-browser/px-context-browser.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/time-series-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/widget-to-widget-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/hide-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/toggle-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/card-to-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/description-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/fetch-data-card.html"/>
+    <link rel="import" href="bower_components/px-sample-cards/temperature-card.html"/>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script type="text/javascript" src="Scripts/DashboardCtrl.js"></script>  
+ </head>
+ 
+ 
+    <title>Simple Polylines</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+     <script>
+
+      // This example creates a 2-pixel-wide red polyline showing the path of William
+      // Kingsford Smith's first trans-Pacific flight between Oakland, CA, and
+      // Brisbane, Australia.
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {lat: 0, lng: -180},
+          mapTypeId: 'terrain'
+        });
+
+        var flightPlanCoordinates = [
+          {lat: 37.772, lng: -122.214},
+          {lat: 21.291, lng: -157.821},
+          {lat: -18.142, lng: 178.431},
+          {lat: -27.467, lng: 153.027}
+        ];
+        var flightPath = new google.maps.Polyline({
+          path: flightPlanCoordinates,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        flightPath.setMap(map);
+      }
+    </script>
+    <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvrNnAQIUUP4vs_TGGn9VljJKZCv2k-q0&callback=initMap">
+    </script>
+  </head>
+  <body>
+   
+   
+
+<div class="row module-set" style="background-color:;margin-top:40px">
+     <section id="section1"  class="module span8">
+    <div  class="module-body">
+     <div id="module-1" class="module-body">
+ 
+
+<div id="chart1" style="min-width: 500px; height: 350px; margin: 0 auto;margin-left:50px" ></div>
+    
+
+
+    </div>
+
+    <footer class="module-footer">
+     </footer>
+    </div>
+    </section>
+     <section ng-app="charts">
+   <div ng-controller="SVChartsCtrl">
+        <highchart chart='{{renderChart}}'></highchart>
+        <table>
+            <tr ng-repeat="record in overSpeedWorstRecords">
+                <td>{{record.time}}</td>
+                <td>{{record.e07}}</td>
+            </tr>
+        </table>
+   </div>
+  </section>
+  <section id="section2"  class="module span4" >
+    <div  class="module-body">
+     <div id="module-2" class="module-body">
+        <div id="chart2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </div>
+    <footer class="module-footer"></footer>
+    </div>
+    </section>
+        <section id="section3"  class="module span4">
+    <div  class="module-body">
+     <div id="module-3" class="module-body">
+        <div class="module-content" id="chart3" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </div>
+    <footer class="module-footer"></footer>
+    </div>
+    </section>
+    <section id="section5"  class="module span4">
+    <div  class="module-body">
+     <div id="module-5" class="module-body">
+        <div id="chart5" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+      <!--   <div class="module-content" id="chart4" style="min-width: 310px; height: 400px; margin: 0 auto"></div> -->
+    </div>
+    <footer class="module-footer"></footer>
+    </div>
+    </section>
+    <section id="section4"  class="module span4">
+    <div  class="module-body">
+     <div id="module-4" class="module-body">
+        <div id="map" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+      <!--   <div class="module-content" id="chart4" style="min-width: 310px; height: 400px; margin: 0 auto"></div> -->
+    </div>
+    <footer class="module-footer"></footer>
+    </div>
+    </section>
+     <section >
+   <div ng-controller="SVChartsCtrl">
+        <highchart chart='{{renderChart}}'></highchart>
+   
+   </div>
+  </section>
+    
+  
+  </div>
+  </body>
+</html>

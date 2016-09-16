@@ -1,0 +1,52 @@
+[
+		                        {
+		                            "keypart": "Nuts",
+		                            "visitcost2013": 254,
+		                            "costperquarter2013": "71, 78, 39, 66 " ,
+		                            "visitcost2014": 296,
+		                            "costperquarter2014": "8, 52, 80, 96 ",
+		                            "differenceincost":-42,
+		                            "quarterlycostdifferenceText": "3, 6, -41, -30 ", 
+		                            "quarterlycostdifference": "3, 6, -41, -30 ,; column" 
+		                          },
+		                          {
+		                            "keypart": "Bolts",
+		                            "visitcost2013": 246,
+		                            "costperquarter2013": "87, 44, 74, 41 ",
+		                            "visitcost2014": 181,
+		                            "costperquarter2014": "29, 54, 73, 25 ",
+		                            "differenceincost": 65,
+		                            "quarterlycostdifferenceText": "58, -10, 1, 16 ", 
+		                            "quarterlycostdifference": "58, -10, 1, 16 ,; column" 
+		                          },
+		                          {
+		                            "keypart": "Blades",
+		                            "visitcost2013": 101,
+		                            "costperquarter2013": "56, 12, 8, 25 ",
+		                            "visitcost2014": 191,
+		                            "costperquarter2014": "69, 14, 53, 55 ",
+		                            "differenceincost": -90,
+		                            "quarterlycostdifferenceText": "-13, -2, -45, -30 ",
+		                            "quarterlycostdifference": "-13, -2, -45, -30 ,; column" 
+		                          },
+		                          {
+		                            "keypart": "Wing",
+		                            "visitcost2013": 303,
+		                            "costperquarter2013": "81, 50, 78, 94 ",
+		                            "visitcost2014": 76,
+		                            "costperquarter2014": "36, 15, 14, 11 ",
+		                            "differenceincost": 58,
+		                            "quarterlycostdifferenceText": "45, 35, 64, 83 ",
+		                            "quarterlycostdifference": "45, 35, 64, 83 ,; column"
+		                          },
+		                          {
+		                            "keypart": "Throtle",
+		                            "visitcost2013": 296,
+		                            "costperquarter2013": "68, 52, 80, 96 ",
+		                            "visitcost2014": 254,
+		                            "costperquarter2014":  "71, 78, 39, 66 ",
+		                            "differenceincost": 42,
+		                            "quarterlycostdifferenceText":"-3, -26, 41, 30 ",
+		                            "quarterlycostdifference":"-3, -26, 41, 30 ,; column"
+		                          }
+		                        ]

@@ -1,0 +1,9 @@
+com/techm/predix/aveoaero/jpa/DatabaseConfigCloud.class
+com/techm/predix/aveoaero/dto/FlightPathDTO.class
+com/techm/predix/aveoaero/repository/IFlightDataEntityRepository.class
+com/techm/predix/aveoaero/CorsFilter.class
+com/techm/predix/aveoaero/entity/FlightDataEntity.class
+com/techm/predix/aveoaero/FlightDataServiceApplication.class
+com/techm/predix/aveoaero/entity/AvioDataNew1PK.class
+com/techm/predix/aveoaero/FlightDataService.class
+com/techm/predix/aveoaero/dto/FlightParametersDTO.class

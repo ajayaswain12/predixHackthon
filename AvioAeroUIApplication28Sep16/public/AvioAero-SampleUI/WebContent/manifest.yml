@@ -1,0 +1,6 @@
+---
+applications:
+  - name: predix-avio-areo
+    buildpack: staticfile_buildpack
+    memory: 64M
+    stack: cflinuxfs2

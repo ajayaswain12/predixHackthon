@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+        <title>Aero Avi</title>
+
+
+        <!-- 1. Add these JavaScript inclusions in the head of your page -->
+        <script type="text/javascript" src="scripts/jquery-1.9.1.js"></script>
+		 <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="scripts/highcharts.js"></script>
+        <!--[if IE]>
+            <script type="text/javascript" src="../js/excanvas.compiled.js"></script>
+        <![endif]-->
+
+
+        <!-- 2. Add the JavaScript to initialize the chart on document ready -->
+
+
+
+<title>Full Width Pics - Start Bootstrap Template</title>
+<!-- Bootstrap Core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Theme CSS -->
+<link href="css/clean-blog.min.css" rel="stylesheet">
+<!-- Custom Fonts -->
+<link href="css/AdminLTE.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+ <link href="stylesheets/menu.css" rel="stylesheet" />
+<link href="css/mediaelementplayer.min.css" rel="stylesheet">
+<script src="script/jquery.js"></script>
+<script src="script/bootstrap.min.js"></script>
+<script src="script/mediaelement-and-player.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+<link rel="stylesheet" type="text/css" href="css/noJS.css" />
+
+
+
+        <script type="text/javascript">
+           
+
+$(document).ready(function() {
+   
+ $("#drpFlight").change(function (event) {
+ 
+		 
+		 var urlForData = "https://predix-aveoaeroflightservice4.run.aws-usw02-pr.ice.predix.io/getFlightParameters/"+$("#drpFlight").val();
+		 alert(urlForData);
+		  var processed_json7 = new Array(); 
+		 var processed_json8 = new Array();
+		 var processed_json9 = new Array();
+		  var processed_json10 = new Array(); 
+		 var processed_json11 = new Array();
+		 var processed_json12 = new Array();
+		var processed_jsonC = new Array();  
+ 
+                $.getJSON(urlForData, function(data) {
+				
+				alert(data.length)
+                    // Populate series
+                    for (i = 0; i < data.length; i++){
+                        processed_json7.push([data[i].e07]);
+						processed_json8.push([data[i].e08]);
+                    }
+					
+					for (i = 0; i < data.length; i++){
+                        processed_jsonC.push([data[i].time]);
+                    }
+                 
+                    // draw chart
+                    $('#container1').highcharts({
+                    chart: {
+                        type: "spline"
+                    },
+                    title: {
+                        text: "Flight Data"
+                    },
+                    xAxis: {
+                       categories: processed_jsonC
+                    },
+                    yAxis: {
+                        title: {
+                            text: "Flight"
+                        }
+                    },
+                    series: [{
+	                    name: 'e07',
+                        data: processed_json7
+                    },
+					{
+	                    name: 'e08',
+                        data: processed_json8
+                    }]
+                }); 
+            });
+			$.getJSON(urlForData, function(data) {
+				
+				alert(data.length)
+                    // Populate series
+                    for (i = 0; i < data.length; i++){
+                        processed_json9.push([data[i].e60]);
+						processed_json10.push([data[i].e61]);
+                    }
+					
+					for (i = 0; i < data.length; i++){
+                        processed_jsonC.push([data[i].time]);
+                    }
+                 
+                    // draw chart
+                    $('#container2').highcharts({
+                    chart: {
+                        type: "spline"
+                    },
+                    title: {
+                        text: "Flight Data"
+                    },
+                    xAxis: {
+                       categories: processed_jsonC
+                    },
+                    yAxis: {
+                        title: {
+                            text: "Flight"
+                        }
+                    },
+                    series: [{
+	                    name: 'e60',
+                        data: processed_json9
+                    },
+					{
+	                    name: 'e61',
+                        data: processed_json10
+                    }]
+                }); 
+            });
+			$.getJSON("data3.txt", function(data) {
+				
+                    // Populate series
+                    for (i = 0; i < data.length; i++){
+                        processed_json11.push([data[i].l01]);
+						processed_json12.push([data[i].m61]);
+                    }
+					
+					for (i = 0; i < data.length; i++){
+                        processed_jsonC.push([data[i].time]);
+                    }
+                 
+                    // draw chart
+                    $('#container3').highcharts({
+                    chart: {
+                        type: "spline"
+                    },
+                    title: {
+                        text: "Flight Data"
+                    },
+                    xAxis: {
+                       categories: processed_jsonC
+                    },
+                    yAxis: {
+                        title: {
+                            text: "Flight"
+                        }
+                    },
+                    series: [{
+	                    name: '101',
+                        data: processed_json11
+                    },
+					{
+	                    name: 'm61',
+                        data: processed_json12
+                    }]
+                }); 
+            });
+			});
+			});
+
+        </script>
+
+    </head>
+    <body>
+	<header class="intro-header"
+		style="background-image: url('images/AvioAero2.png');height:200px;">
+		  
+	</header>
+
+<nav id="menu2" class="path-nav path-nav-top-right">
+    <a href="#menu2" class="path-nav-expander">
+        <!-- This cross markup is mandatory since only firefox support animation on pseudo content -->
+        <div class="cross">
+            <div class="cross-h"></div>
+            <div class="cross-v"></div>
+        </div>
+    </a>
+    <a href="#" class="path-nav-close"></a>
+    <ul>
+        <li><a href="#"><img src="images/aero1.png" class="img-circle" style="height:128px; width:128px;"></a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">Flight3</a></li>
+    </ul>
+</nav>
+		<div id="drpdwnlbl">
+		</div>
+		<div id="drpdwn">
+		<select id="drpFlight" name="drpFlight">
+			<option value=" ">Please select a Flight</option>
+			<option value="1">Flight 1</option>
+			<option value="2">Flight 2</option>
+		</select>
+		</div>
+        <!-- 3. Add the container -->
+        <div id="container1" style="width: 600px; height: 200px; margin: 0 auto"></div>
+		<div id="container2" style="width: 600px; height: 200px; margin: 0 auto"></div>
+		 <div id="container3" style="width: 600px; height: 200px; margin: 0 auto"></div>
+		<div id="map" style="width:100%;height:500px"></div>
+	<script>
+	function myMap() {
+	  var mapCanvas = document.getElementById("map");
+	  var mapOptions = {
+		center: new google.maps.LatLng(51.5, -0.2),
+		zoom: 10
+	  }
+	  var map = new google.maps.Map(mapCanvas, mapOptions);
+	}
+	</script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+    </body>
+</html>

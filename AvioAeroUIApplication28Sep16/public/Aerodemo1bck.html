@@ -1,0 +1,360 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- 1. Add these JavaScript inclusions in the head of your page -->
+<script type="text/javascript" src="scripts/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="scripts/highcharts.js"></script>
+<!--[if IE]>
+            <script type="text/javascript" src="../js/excanvas.compiled.js"></script>
+        <![endif]-->
+
+
+<!-- 2. Add the JavaScript to initialize the chart on document ready -->
+
+
+
+<title>Aero Aviation</title>
+<!-- Bootstrap Core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Theme CSS -->
+<link href="css/clean-blog.min.css" rel="stylesheet">
+<!-- Custom Fonts -->
+<link href="css/AdminLTE.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link href="css/mediaelementplayer.min.css" rel="stylesheet">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="http://www.geaviation.com/mdx/components/brandkit/favicon/favicon-72px.png">
+<link rel="apple-touch-icon-precomposed"
+	href="http://www.geaviation.com/mdx/components/brandkit/favicon/favicon.png">
+<link href="css/mds.css" rel="stylesheet" type="text/css">
+<link href="css/mds-ie-overflow.css" rel="stylesheet" type="text/css">
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+<link href="css/aviation.css" rel="stylesheet" type="text/css">
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+<link href="css/homepage.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<script src="script/jquery.js"></script>
+<script src="script/bootstrap.min.js"></script>
+<script src="script/mediaelement-and-player.min.js"></script>
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<script type="text/javascript">
+           
+
+$(document).ready(function() {
+   
+ $("#drpFlight").change(function (event) {
+ 
+		 
+		 var urlForData = "https://predix-aveoaeroflightservice5.run.aws-usw02-pr.ice.predix.io/getAllAvioAeroData/"+$("#drpFlight").val();
+		  var processed_json7 = new Array(); 
+		 var processed_json8 = new Array();
+		 var processed_json9 = new Array();
+		  var processed_json10 = new Array(); 
+		 var processed_json11 = new Array();
+		 var processed_json12 = new Array();
+		var processed_jsonC = new Array();  
+ 
+                $.getJSON(urlForData, function(data) {
+				
+                    // Populate series
+                    for (i = 0; i < data.flightParametersDtoList.length; i++){
+                        processed_json7.push([data.flightParametersDtoList[i].e07]);
+						processed_json8.push([data.flightParametersDtoList[i].e08]);
+                    }
+					
+					for (i = 0; i < data.length; i++){
+                        processed_jsonC.push([data.flightParametersDtoList[i].time]);
+                    }
+                 
+                    // draw chart
+                    $('#container1').highcharts({
+                    chart: {
+                        type: "spline"
+                    },
+                    title: {
+                        text: "Flight Data"
+                    },
+                    xAxis: {
+                       categories: processed_jsonC
+                    },
+                    yAxis: {
+                        title: {
+                            text: "Flight"
+                        }
+                    },
+                    series: [{
+	                    name: 'e07',
+                        data: processed_json7
+                    },
+					{
+	                    name: 'e08',
+                        data: processed_json8
+                    }]
+                }); 
+				
+				//second graph
+				
+				for (i = 0; i < data.flightParametersDtoList.length; i++){
+                        processed_json9.push([data.flightParametersDtoList[i].e60]);
+						processed_json10.push([data.flightParametersDtoList[i].e61]);
+                    }
+					
+					for (i = 0; i < data.length; i++){
+                        processed_jsonC.push([data.flightParametersDtoList[i].time]);
+                    }
+                 
+                    // draw chart
+                    $('#container2').highcharts({
+                    chart: {
+                        type: "spline"
+                    },
+                    title: {
+                        text: "Flight Data"
+                    },
+                    xAxis: {
+                       categories: processed_jsonC
+                    },
+                    yAxis: {
+                        title: {
+                            text: "Flight"
+                        }
+                    },
+                    series: [{
+	                    name: 'e60',
+                        data: processed_json9
+                    },
+					{
+	                    name: 'e61',
+                        data: processed_json10
+                    }]
+                }); 
+	
+				for (i = 0; i < data.flightParametersDtoList.length; i++){
+                        processed_json11.push([data.flightParametersDtoList[i].l01]);
+						processed_json12.push([data.flightParametersDtoList[i].m61]);
+                    }
+					
+					for (i = 0; i < data.length; i++){
+                        processed_jsonC.push([data.flightParametersDtoList[i].time]);
+                    }
+                 
+                    // draw chart
+                    $('#container3').highcharts({
+                    chart: {
+                        type: "spline"
+                    },
+                    title: {
+                        text: "Flight Data"
+                    },
+                    xAxis: {
+                       categories: processed_jsonC
+                    },
+                    yAxis: {
+                        title: {
+                            text: "Flight"
+                        }
+                    },
+                    series: [{
+	                    name: '101',
+                        data: processed_json11
+                    },
+					{
+	                    name: 'm61',
+                        data: processed_json12
+                    }]
+                });
+ 
+ var flightPlanCoordinates = [
+        {lat:44.9987,lng:7.498},
+        {lat:44.9987,lng:7.498},
+        {lat:44.9987,lng:7.498},
+        {lat:44.9987,lng:7.498},
+        {lat:44.9988,lng:7.498},
+        {lat:44.9988,lng:7.498},
+        {lat:44.9988,lng:7.498},
+        {lat:44.9988,lng:7.498},
+        {lat:44.9988,lng:7.498},
+        {lat:44.9989,lng:7.498},
+        {lat:44.997,lng:7.498},
+        {lat:44.9951,lng:7.498},
+        {lat:44.9967,lng:7.498},
+        {lat:45.0011,lng:7.498},
+        {lat:45.0077,lng:7.498},
+        {lat:45.0157,lng:7.498},
+        {lat:45.0244,lng:7.498},
+        {lat:45.0331,lng:7.498},
+        {lat:45.0411,lng:7.498},
+        {lat:45.0464,lng:7.498},
+        {lat:45.049,lng:7.498},
+        {lat:45.0493,lng:7.498},
+        {lat:45.0467,lng:7.498},
+        {lat:45.047,lng:7.498}
+    ];
+	$.each(flightPlanCoordinates, function(key, data) {
+            var latLng = new google.maps.LatLng(data.latt, data.long); 
+            // Creating a marker and putting it on the map
+            var marker = new google.maps.Marker({
+                position: latLng,
+                title: data.title
+            });
+            marker.setMap(map);
+          });
+			
+            });
+			
+			
+            });
+					
+			});
+
+        </script>
+
+</head>
+<body>
+	<header class="intro-header"
+		style="background-image: url('images/AvioAero2.png');height:200px;">
+	<div class="container">
+		<div class="col-md-6">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="site-heading pull-left" style="margin-left: -50px">
+					<img src="images/avio.png" style="margin-top: -50px;"></img>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	</header>
+
+	<div id="drpdwnlbl">
+
+		<div id="drpdwn">
+			<select id="drpFlight" name="drpFlight">
+				<option value=" ">Please select a Flight</option>
+				<option value="1">Flight 1</option>
+				<option value="2">Flight 2</option>
+			</select>
+		</div>
+	</div>
+
+	<div id="container1"
+		style="width: 600px; height: 200px; margin: 0 auto"></div>
+	<div id="container2"
+		style="width: 600px; height: 200px; margin: 0 auto"></div>
+	<div id="container3"
+		style="width: 600px; height: 200px; margin: 0 auto"></div>
+
+	<div id="map" style="width: 600px; height: 200px; margin: 0 auto"></div>
+
+
+
+	<script>
+	function myMap() {
+	  var mapCanvas = document.getElementById("map");
+	  var mapOptions = {
+		center: new google.maps.LatLng(51.5, -0.2),
+		zoom: 10
+	  }
+	  var map = new google.maps.Map(mapCanvas, mapOptions);
+	}
+	</script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+	<!-- Footer -->
+
+	<footer>
+	<div class="footer large">
+		<div class="footer-inner">
+			<div class="container">
+
+				<div class="row footer-header">
+					<div class="span12">
+						<div class="brand">
+							<span class="ge-logo"></span>Imagination at work
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+
+				<hr>
+
+				<div class="row footer-body">
+					<div class="span9">
+						<div class="block">
+							<h6>GE Aero Avio</h6>
+							<p style="text-align: justify">GE Aero Avio is a world-leading
+								provider of commercial, military and business and general
+								aviation jet and turboprop engines and components as well as
+								avionics, electrical power and mechanical systems for aircraft.
+								GE has a global service network to support these offerings. GE
+								and its customers are also working together to unlock new
+								opportunities to grow and deliver more productivity beyond
+								traditional services. GE Aviation is becoming a digital
+								industrial business with its ability to harness large streams of
+								data that are providing incredible insights and in turn, real
+								operational value for customers.</p>
+						</div>
+					</div>
+					<div class="span3">
+						<div class="block">
+							<h6>Contact Information</h6>
+							<p>How can we help you?</p>
+							<p>
+								<a href="http://www.geaviation.com/support/"
+									style="color: #186AB9; line-height: 26px">Customer Support
+									<i class="icon-ico_arrowright_lg"></i>
+								</a><br> <a
+									href="http://www.geaviation.com/support/contact.html"
+									style="color: #186AB9">Contact Us <i
+									class="icon-ico_arrowright_lg"></i></a>
+							</p>
+						</div>
+					</div>
+
+				</div>
+				<!-- /row -->
+
+				<hr>
+
+				<div class="row footer-footer">
+					<div class="span12">
+
+						<div class="block colophon">
+							<ul>
+								<li><a href="http://www.ge.com/privacy" target="_blank">Privacy</a></li>
+								<li><a href="http://www.ge.com/terms" target="_blank">Terms</a></li>
+								<li><a
+									href="http://www.geaviation.com/support/contact.html">Contact</a></li>
+								<li><a href="http://www.ge.com/accessibility"
+									target="_blank">Accessibility</a></li>
+								<li><a id="_bapw-link"
+									href="http://info.evidon.com/pub_info/5704?v=1" target="_blank"
+									style="text-decoration: none !important">Cookies</a>
+								<script>/*<![CDATA[*/(function(){function f(n){var r=new Image;r.src=o+"l.betrad.com/pub/p.gif?pid="+e+"&ocid="+t+"&i"+n+"=1&mb="+(a?"2":"0")+"&r="+Math.random()}var e=5704,t=3453,n=!1,r=document,i=r.getElementById("_bapw-link"),s=r.location.protocol=="https:",o=(s?"https":"http")+"://",u=window._bap_p_overrides,a=u&&u.hasOwnProperty(e)&&u[e].mobile;i.onclick=function(){return f("c"),!0},f("i")})();/*]]>*/</script></li>
+								<li>© 2015 General Electric</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+				<!-- /row -->
+
+			</div>
+		</div>
+	</div>
+	</footer>
+
+</body>
+</html>

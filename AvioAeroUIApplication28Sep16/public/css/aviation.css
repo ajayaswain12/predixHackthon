@@ -1,0 +1,624 @@
+/* TEMP FIX FOR THE HEADER SPACE BEING SO LARGE - THIS WILL MOST LIKELY BE FIXED WITH NEXT Cdx RELEASE */
+.reader 
+{position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;}
+
+/* a bit more breathing space for H2 tags in the body */
+.lrgdeck h2 {margin-bottom: 25px}
+
+.movie {position: relative;}
+.movie i {position: absolute; top: 50%; left: 50%;  margin-top: -36px; margin-left: -36px; font-size: 80px; color: #fff;}
+
+.navbar .navbar-inner {
+  min-height: 112px;
+}
+
+.hero-share {float: right; position: absolute; top: 10px; right: 10px;}
+/* expand nav on rollover desktop only */
+@media (min-width: 980px) {
+/* show nav when rollover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+ }
+.navbar .primary-navbar .nav > li.dropdown:hover > .dropdown-toggle {
+  border: 1px solid #e1e2e5;
+  background-color: #ffffff;
+  border-bottom-color: #ffffff;
+  color: #005eb8;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 1001;
+}
+li.dropdown:hover {
+*z-index: 1000;
+}
+
+}
+
+
+@media (min-width: 768px) and (max-width: 980px) {
+ .newsletter-bottom-align {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+  }
+}
+
+
+/* CTA additions */
+input.signup-text {
+  border-radius: 20px 20px 20px 20px;
+-moz-border-radius: 20px 20px 20px 20px;
+-webkit-border-radius: 20px 20px 20px 20px;
+  padding: 8px 20px !important;
+}
+.btn.btn-primary.round {
+  height: 30px;
+  background-color: #1ea6de;
+  font-size: 16px;
+  padding: 8px 30px 3px;
+  border-radius: 30px 30px 30px 30px;
+-moz-border-radius: 30px 30px 30px 30px;
+-webkit-border-radius: 30px 30px 30px 30px;
+}
+.btn.btn-primary.round:hover {
+
+  background-color: #3e75b7;
+
+}
+.btn.btn-primary.round.white {
+  background-color: #fff;
+  color: #3e75b7;
+  margin-right: 0
+}
+.btn.btn-primary.round.white:hover {
+  background-color: #f1f1f1;
+  color: #444;
+}
+
+.block-cta {
+  background-color: #9c9a9a;
+  border-radius: 4px;
+  padding: 15px 20px;
+  color: #fff;
+}
+
+.block.no-side-pad {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+
+/* fix for customer pulldown in mobile mode */
+@media (max-width: 767px) {
+.btn-group.open ul.dropdown-menu {display: block !important; background-color: #fff; margin-left: 0; }
+}
+
+
+
+@media (max-width: 980px) {
+
+
+  /* 
+ul.dropdown-menu {display: none !important;}*/
+
+/* displays subnavs as a list instead of side by side grid */
+.navbar .primary-navbar .dropdown-menu .open {
+display: block !important;
+}
+
+.dropdown-menu li.open  {
+  margin-bottom: 15px !important;
+}
+.dropdown-menu li.open ul  {
+  padding-left: 12px !important;
+}
+.dropdown-menu li.open a {
+  padding: 2px 0 !important;
+}
+
+}
+
+
+
+/* keep name for mid-widths with large monogram */
+@media (min-width: 768px) and (max-width: 979px) {
+  .brand .primary-brand {
+    display: inline-block; !important;
+  }
+}
+/* keep name for all widths on small monogram */
+@media (max-width: 979px) {
+  .navbar-small .brand .primary-brand {
+    display: inline-block; !important;
+  }
+}
+
+/* fix mobile height of nav area being too big */
+@media (max-width: 480px) {
+  .navbar .navbar-inner {
+    height: 100px !important;
+  }
+}
+
+
+h6.title.share {margin-top: 35px}
+
+ul.spaced li {margin-bottom: 15px}
+img.image-pad {padding: 8px 0 15px}
+
+
+.redband {border-top: 6px solid #ff4e38;}
+
+.navbar ul.list-icon {margin: 0 15px 0 0;}
+.navbar ul.list-icon li { margin-right: 1px }
+.navbar ul.list-icon li a {color: #5C5F63;}
+.navbar ul.list-icon li a:hover {color: #333; } 
+
+li.midNavParent {margin-top: 8px;}
+
+
+.backtop {
+  background-color: #3BA3E0;
+}
+
+
+a.trigger {cursor: pointer;}
+.bottom-shim {margin-bottom: 15px;}
+
+img.image-left {float: left; margin: 0 15px 10px 0;}
+@media (max-width: 767px) {
+img.image-left {display: block; float: none; margin: 0 auto 10px auto;}
+}
+
+ul.inside {list-style-position:inside;}
+
+#broadcast {background-color: #ff4e38; z-index: 1000; display: block; position: relative; color: #fff;padding: 5px 0;font-weight: 800;}
+
+a.news-link {margin-top: 10px; font-size: 18px; color: #EB8021;}
+
+a.news-btn {background-color: #1BA5D8; padding: 10px 12px; color: #fff; border-radius: 20px 20px 20px 20px;
+-moz-border-radius: 20px 20px 20px 20px;
+-webkit-border-radius: 20px 20px 20px 20px;
+border: 0px solid #000000; font-weight: bold; transition: background-color 0.4s ease;}
+a.news-btn:hover {background-color: #1d5379}
+
+a.lead-btn {font-size: 18px; font-weight: normal; background-color: #fe7c4b; padding: 12px 15px; color: #fff; border-radius: 20px 20px 20px 20px;
+-moz-border-radius: 20px 20px 20px 20px;
+-webkit-border-radius: 20px 20px 20px 20px;
+margin: 10px auto 0 auto; display: inline-block;
+border: 0px solid #000000; transition: background-color 0.4s ease;}
+a.lead-btn:hover {background-color: #f0f1f2}
+
+
+img.bordered {border: 1px solid #aaa}
+
+.callout {padding: 15px 15px 10px 15px; border-left: 8px solid #d9eff2; font-size: 16px; line-height: 25px;}
+.callout a {line-height: 25px;}
+
+a.nav-support  {color: #ff5039 !important;}
+
+sup small {color: #777; font-size: 75%}
+/* support btn in nav */
+header .btn.btn-primary {background-color: #3BA3E0}
+
+footer .list-icon {font-size: 20px;}
+
+/* leadership page */
+.bios img.dressing {background-color: #f0f1f2; padding: 4px; border: 1px solid #eee; float: left; margin-right: 20px;}
+.bios h2, .bios h3 {margin-bottom: 8px;}
+@media (max-width: 767px) {
+.bios img.dressing {display: block; float: none; margin: 0 auto 10px auto;}
+}
+
+/* related articles */
+.related img {border: 1px solid #ddd; margin-bottom: 12px}
+.related a h4 {margin-top: 0 !important; font-size: 17px; color: #0D60B5}
+.related a:hover h4, .related a:hover h4 i {color: #333}
+.related h5 {font-size: 12px; font-weight: 500; line-height: 18px; color: #888;}
+.related a h4 i {font-size: 10px; margin-left: 2px; color: #fff;}
+
+/* history page */
+.product.history article {margin: 30px 0 15px;}
+
+/* stories */
+.stories h5 {color: #666; padding: 5px 0}
+.icon-ico_fullscreen_lg {padding-left: 4px;}
+
+/* nav fixed for mega menu */
+.navbar .primary-navbar .dropdown-menu .open {
+float: none;
+min-width: 100px;
+display: inline-block;
+vertical-align: top;
+margin-right: 10px;
+}
+
+ul.normal-list li {margin-bottom: 20px;}
+
+table.horiz-only td {border-left: none; border-right: none;}
+
+li.open ul.unstyled {margin-top: 0;}
+
+.primary-navbar .icon-ico_externallink_sm, #sitemap .icon-ico_externallink_sm, .side-nav .icon-ico_externallink_sm {font-size: 11px; padding-left: 2px;}
+
+
+/* table for engine stats */
+.table.stats, .table.stats td, .table.stats th {border: none; padding: 4px 4px 4px 0; vertical-align: top;}
+
+
+.block.tight-bottom {margin-bottom: 0;}
+.block-pad {padding: 30px;}
+
+img.pull-right {padding: 10px 0 15px 15px;}
+
+/* this fixes the bolder font used on the business name from using Typekit */
+.brand .primary-brand {font-weight: 500;}
+.pull-right {float:right !important;}
+.centered {text-align: center;}
+.pull-right.pad {margin: 5px 0 5px 20px;}
+.pull-left.pad {margin: 5px 20px 5px 0;}
+.overlay {position: relative;}
+
+.table th {background-color: inherit; color: inherit; border-bottom: 1px solid #ddd;}
+
+figure {margin-left: 0; text-align: center; }
+figure.column {float: left;}
+
+.prcontent, .prcontent span.timestamp {font-family: ge-serif; font-size: 16px}
+ul.breadcrumb {margin-bottom: 0px; padding-left: 5px;}
+
+.shim {min-height: 25px; height: 25px;}
+
+.gap-medium {margin-top: 30px; margin-bottom: 15px;}
+.gap-t-medium {margin-top: 30px;}
+.gap-large {margin-top: 45px; margin-bottom: 30px;}
+.pad25 {padding-top: 25px;}
+.pad35 {padding-top: 35px;}
+.nominheight .block.feature {min-height: 0;}
+.nominheight .block.feature p {margin:0;}
+
+/* shrinks padding in the cards that the engines appear in */
+.enginelist .block {padding: 10px 20px;}
+.makeroom .block {padding: 20px 15px;}
+
+/* prevents spans from collapsing in mobile for special layouts - add to spans */
+@media all and (max-width: 767px)  {
+    .half {
+        float: left !important;
+        width: 50% !important;
+    }
+}
+
+/* donut dial */
+input.dial {font-family: 'ge-inspira' !important}
+
+/* blue text back
+.text-back h1, .text-back h2 {margin-bottom: 0; background: rgb(54, 25, 25); background: rgba(0,92,185, .7); display: inline-block; padding: 4px 8px;}
+.text-back h3, .text-back h4 {margin-top: 0; background: rgb(54, 25, 25); background: rgba(0,92,185, .7); display: inline-block; padding: 4px 8px;} 
+*/
+
+/* rgba(255,79,79, .8) */
+
+/*
+.text-back h1, .text-back h2 {margin-bottom: 0; background: rgb(54, 25, 25); background: rgba(50,50,50, .6); display: inline-block; padding: 4px 8px;}
+.text-back h3, .text-back h4 {margin-top: 0; background: rgb(54, 25, 25); background: rgba(50,50,50, .6); display: inline-block; padding: 4px 8px;} 
+*/
+
+.text-back h1, .text-back h2 {margin-bottom: 0; background: rgb(47, 47, 47); background: rgba(47, 47, 47, .35); display: inline-block; padding: 4px 8px;}
+.text-back h3, .text-back h4, .text-back h6 {margin-top: 0; background: rgb(47, 47, 47); background: rgba(47, 47, 47, .35); display: inline-block; padding: 4px 8px;} 
+.text-shadow h1, .text-shadow h2, .text-shadow h3, .text-shadow h4 {text-shadow: 1px 1px #555;}
+
+.text-reverse h1, .text-reverse h3 {color: #555 !important;}
+
+@media (max-width: 767px) {
+.text-back h1, .text-back h2, .text-back h3, .text-back h4, .text-back h6 { background: none; padding: 0px; color: #000;}
+.text-shadow h1, .text-shadow h2, .text-shadow h3, .text-shadow h4 {text-shadow: none;}
+/* fix for mdx */
+.hero .text.top {position: relative; top: 0;}
+.hero .text-right {text-align: left;}
+
+/* fix for breadcrumb in PR while in smaller viewport */
+.container.prelease {padding-top: 0; padding-bottom: 0}
+
+}
+
+/* press archive */
+ul.releases li {margin-bottom: 15px;}
+
+@media (max-width: 980px) {
+  /* press archive mobile line break timestamp */
+ul.releases li span {display: block;}
+}
+
+
+
+/* h1 {text-shadow:3px 3px rgba(0,0,0,0.3)} */
+
+#history section {margin-top: 50px;}
+
+
+/* for images that lay flush with bottom of a span */
+.bottom-abut {margin-bottom: 0 !important;}
+
+.media.subhero {position: relative;}
+.media.subhero h6.courtesy {position: absolute; bottom: -10px; right: 8px; color: #fff;}
+
+/* animation setup and delays */
+.invis {opacity: 0;}
+.delay-half {
+    -webkit-animation-delay: .5s;
+    -moz-animation-delay: .5s;
+    -o-animation-delay: .5s;
+    -ms-animation-delay: .5s;
+}
+
+.delay-1 {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -o-animation-delay: 1s;
+    -ms-animation-delay: 1s;
+}
+
+.delay-2 {
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    -o-animation-delay: 2s;
+    -ms-animation-delay: 2s;
+}
+.delay-3 {
+    -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+    -o-animation-delay: 3s;
+    -ms-animation-delay: 3s;
+}
+
+.counter {font-family: 'source-sans-pro'; font-size: 62px; font-weight: 100}
+
+/* background colors */
+.bg-white {background-color: #fff;}
+.bg-dark {background-color:#002d44;}
+
+
+.color-a {color: #79BD11} /* green */
+.color-b {color: #fff;} /* white */
+.new {
+position: absolute;
+content: ' ';
+top: -7px;
+left: -7px;
+width: 41px;
+height: 41px;
+background: url(/engines/img/bug-new.png) no-repeat;
+z-index: 2;
+}
+
+/* make icons larger for engines page */
+.fill-container.teasers .teaser.image-icon .icon {
+  width: 160px;
+}
+
+.thumbnail .caption a {color: #333;}
+
+.lrgdeck p, .lrgdeck ul {font-size: 18px; line-height: 24px; margin-bottom: 22px;}
+.lrgdeck h3 {font-size: 30px; line-height: 35px; margin-bottom: 18px;}
+
+.longform h2 {font-size: 26px; line-height: 31px; margin-bottom: 15px;}
+.longform h3 {font-size: 23px; line-height: 28px; margin-bottom: 15px;}
+
+
+.mag-inverse h3, .mag-inverse h2, .mag-inverse p {color: #fff}
+
+.mag-text-20 {margin-top: 20px;}
+.mag-text-40 {margin-top: 40px;}
+.mag-text-60 {margin-top: 60px;}
+.mag-image-60 img {margin-top: -60px}
+.mag-image-90 img {margin-top: -90px}
+
+h5.cat-sub{margin: -10px 0 20px 0; color: #666;}
+
+.label.tag {
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding: 8px 7px 7px 7px;
+}
+
+.white {background-color: #fff;}
+.gray {background-color:#f0f1f2;}
+.dark {background-color: #111;}
+
+/* jumpnav fixes */
+.jumpnav {
+  padding: 0px 0;
+  -moz-box-sizing: border-box;
+ -webkit-box-sizing: border-box; 
+ box-sizing: border-box;
+ min-height: 45px;
+}
+.lrgnav.jumpnav.fixed {
+  width:100%;
+  border-radius: 0;
+border-bottom: 1px solid #ccc;
+min-height: 45px;
+/* box-shadow: 0px 1px 2px #ddd; */
+  }
+.lrgnav.jumpnav ul {
+  padding: 14px 0px 0px 0px;
+  list-style: none;
+  margin: 0;
+}
+.lrgnav.jumpnav li {
+  font-size: 16px;
+ /* float: left; */
+  margin-right: 40px;
+  line-height: 16px;
+  padding-bottom: 10px;
+}
+.jumpnav a:hover {
+ background-color: inherit !important; 
+  color: #005eb8;
+  text-decoration: none;
+}
+.lrgnav.jumpnav li.key {
+  font-size: 12px;
+ /* float: left; */
+  margin-right: 30px;
+  background-color: #6bd252;
+  padding: 3px 6px;
+  margin-top: -4px;
+  border-radius: 2px;
+  color: #fff;
+  font-weight: 700;
+}
+.lrgnav.jumpnav.fixed li.key {
+  /* display: none; */
+}
+.lrgnav.jumpnav.fixed li.active {
+ border-bottom: 4px solid #005EB8; 
+ transition:all .15s ease-in-out;
+}
+.lrgnav.jumpnav {  margin-bottom: 0px;}
+.lrgnav.jumpnav .span12 {  margin-bottom: 0px;}
+
+
+section.simple article > p {font-family: ge-sans}
+section.simple h4, section.simple p {margin-bottom: 10px;padding-bottom: 5px;}
+section.simple article {margin-bottom: 30px;}
+section.simple i.icon-ico_documents_sm {margin: 0 3px;}
+
+/* engine card min-height sizings */
+article.enginelist .block.feature {min-height: 495px;}
+@media (min-width: 980px) and (max-width: 1199px) { 
+article.enginelist .block.feature {min-height: 445px;}
+}
+@media (min-width: 767px) and (max-width: 979px) { 
+article.enginelist .block.feature {min-height: 445px;}
+}
+@media (max-width: 767px) {
+article.enginelist .block.feature {min-height: 0px; padding-bottom: 30px;}
+}
+
+/* miscellaneous card min-height sizings */
+article.misc .block.feature {min-height: 415px;}
+@media (min-width: 980px) and (max-width: 1199px) { 
+article.misc .block.feature {min-height: 365px;}
+}
+@media (min-width: 767px) and (max-width: 979px) { 
+article.misc .block.feature {min-height: 365px;}
+}
+@media (max-width: 767px) {
+article.misc .block.feature {min-height: 0px; padding-bottom: 30px;}
+}
+
+/* fix for small navbar being pulled to the left vs. the large version */
+@media (min-width: 980px) {
+.navbar.navbar-small .brand {
+  margin-left: -17px;
+}
+.navbar.navbar-small .primary-navbar {
+  margin-left: 0px;
+}
+
+}
+
+
+
+
+
+
+
+/* engine news card min-height sizings 
+section.news .block.feature {min-height: 495px;}
+@media (min-width: 980px) and (max-width: 1199px) { 
+section.news .block.feature {min-height: 445px;}
+}
+@media (min-width: 767px) and (max-width: 979px) { 
+section.news .block.feature {min-height: 445px;}
+}
+@media (max-width: 767px) {
+section.news .block.feature {min-height: 0px; padding-bottom: 30px;}
+} */
+
+/* remove bleed margins in the mobile display */
+@media (max-width: 767px) {
+.mag-image-60 img {margin-top: 0px}
+.mag-image-90 img {margin-top: 0px}
+}
+
+/* reverse text overlays to white in mobile views when text-back disappears */
+.product h1 {margin-bottom: 5px;}
+.product h2 {font-size: 29px; line-height: 34px; margin-bottom: 5px;}
+.product h3 {line-height: 29px;}
+.product h4 {margin: 20px 0 5px;}
+.product .lead {
+  font-size: 19px;
+  font-style: italic;
+  line-height: 23px;
+  margin: 0 0 20px 0;
+  color: #61879b;
+}
+.product article p {font-family: ge-sans; padding: 0}
+.product article > h3 {margin-bottom: 10px}
+.product article {margin: 15px 0 40px;}
+
+.product hr {margin: 30px 0;}
+
+
+
+
+@media only screen and (max-width: 800px) {
+  
+  /* Force table to not be like tables anymore */
+  #no-more-tables table, 
+  #no-more-tables thead, 
+  #no-more-tables tbody, 
+  #no-more-tables th, 
+  #no-more-tables td, 
+  #no-more-tables tr { 
+    display: block; 
+  }
+ 
+  /* Hide table headers (but not display: none;, for accessibility) */
+  #no-more-tables thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+ 
+  #no-more-tables tr { border: 1px solid #ccc; }
+ 
+  #no-more-tables td { 
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee; 
+    position: relative;
+    padding-left: 50%; 
+    white-space: normal;
+    text-align:left;
+  }
+ 
+  #no-more-tables td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+    text-align:left;
+    font-weight: bold;
+  }
+ 
+  /*
+  Label the data
+  */
+  #no-more-tables td:before { content: attr(data-title); }
+}
+
+

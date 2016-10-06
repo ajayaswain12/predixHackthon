@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Security Starter Application</title>
+  <link rel="stylesheet" href="stylesheets/style.css"></link>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<style>
+            .odd {
+                background-color: #B8B8B8;
+            }
+            .even {
+                background-color: #C8C8C8;
+            }
+            table{
+                border: 1px solid #ccc;
+            }
+            li.right { float:right; }
+        </style>
+<script>
+
+var app = angular.module('countryApp', []);
+
+app.controller('CountryCtrl', function($scope, $http) { 
+//alert("Inside the test");
+    $http.get('https://springbootsvcdemorakesh.run.aws-usw02-pr.ice.predix.io/getStaffDetailsFromDB/')
+    .then(function(response) {
+console.log("data is " + JSON.stringify(response.data));
+        $scope.countries = response.data;
+;
+
+    });
+});
+
+
+app.controller('CountryCtrlabc', function($scope, $http) {
+//alert("Inside the test");
+    $http.get('https://springbootsvcdemorakesh.run.aws-usw02-pr.ice.predix.io/getEmployeeFromDB/')
+    .then(function(response) {
+console.log("data is " + JSON.stringify(response.data));
+        $scope.countries1 = response.data;
+
+
+    });
+});
+
+
+
+    </script>
+
+<body style="background-color:#808080;" ng-app="countryApp" >
+<div class="header" style="height:200px">
+    <h2>My First Predix Sample Application</h2>
+    <h4>Predix Developer Kit</h4>
+
+  <div class="container">
+    <p>This sample app shows how a basic web application works with Predix.</p>   
+ <ul>
+      <li>
+        <a href="/login?state=secure">Login</a>
+      </li
+      <li>
+        <a href="/secure">Secure Page</a>
+      </li>
+    </ul>
+<p>Today's welcome message is:</p>
+
+
+
+ 
+  
+
+</div></div>
+<br/><br/>
+<div  ng-controller="CountryCtrl" style="margin-top:100px"><center>
+    <table style="width: 50%; border: 1px solid  thin;" cellpadding="1" cellspacing="0" >
+
+      <tr>
+  <th style="text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11pt;">Employee ID</th>
+
+        <th style="text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11pt;">Staff Name</th>
+
+  <th style="text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11pt;">Department Name</th>
+
+
+      </tr>
+
+      <tr ng-repeat="countries in countries" ng-class-odd="'odd'" ng-class-even="'even'">
+  <td style="text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 9pt;">{{countries.employeeID}}</td>
+
+        <td style="text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 9pt;">{{countries.staffName}}</td>
+
+  <td style="text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 9pt;">{{countries.departname}}</td>
+
+       
+
+      </tr>
+
+    </table></center></div>
+  
+ 
+  
+<div ng-controller="CountryCtrlabc" style="margin-top:100px"><center>
+    <table style="width: 50%; border: 1px solid  thin;" cellpadding="1" cellspacing="0" >
+
+      <tr>
+  <th style="text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11pt;">Employee ID</th>
+  <th style="text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11pt;">DEPT ID</th>
+
+        <th style="text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11pt;">Employee Name</th>
+
+  <th style="text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11pt;">Employee Last Name</th>
+
+
+      </tr>
+	
+      <tr ng-repeat="employee in countries1" ng-class-odd="'odd'" ng-class-even="'even'">
+  <td style="text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 9pt;">{{employee.employeeID}}</td>
+
+        <td style="text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 9pt;">{{employee.deptId}}</td>
+
+  <td style="text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 9pt;">{{employee.empName}}</td>
+ <td style="text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 9pt;">{{employee.lastname}}</td>
+
+       
+
+      </tr>
+
+    </table></center>
+  
+ 
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+---
+applications:
+- name: rk2-predix-nodejs-starter
+  memory: 128M
+  buildpack: nodejs_buildpack
+  #command:  DEBUG=express:* node app.js
+  command:  node app.js
+services:
+- predix_uaa_rk
+ # - <your-name>-timeseries-instance
+ # - <your-name>-asset-instance
+env:
+    node_env: cloud
+    uaa_service_label : predix-uaa
+    clientId: client1
+    base64ClientCredential: Y2xpZW50MTpjbGllbnQx
+    # Following properties configured only for Timeseries WindData service Integration
+    #windServiceUrl: "{URL of the microservice <your-name>-winddata-timeseries-service}, e.g.  https://your-name-winddata-timeseries-service.run.asw-usw02-pr.predix.io"
+    #assetMachine: my-type
+    #tagname: my-tag
